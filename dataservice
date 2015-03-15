@@ -1,0 +1,7 @@
+#!/bin/bash
+echo Content-type: text/html
+echo Content-length: 56
+echo ""
+echo -n $QUERY_STRING | sed -e 's/data=24.*/A00000000000000001000000000000000000000000000000bec650a1/' -e 's/data=22.*/A20000000000000000000000000000000000000000000000c9950d3f/' -e 's/data=25.*/A00000000000000001000000000000000000000000000000bec650a1/' -e 's/data=28.*/A5000000000000000100000000000000000000000000000056e5abd9/' -e 's/data=21.*/A10000000000000009c4914c0000000000000000000000001d095ec4/'
+echo something went wrong. Your query makes no sense. Go somewhere else.
+echo `date +%s` $QUERY_STRING | grep data=24 >> /var/www/waage/waage.log
